@@ -1056,7 +1056,7 @@ AC_MSG_RESULT([$xopen])
 
 # Tru64 Unix needs -D_OSF_SOURCE for IPV6 support
 SAVEDCFLAGS=$CFLAGS
-CFLAGS=$CFLAGS" -D_XOPEN_SOURCE=500 -D_BSD_SOURCE"
+CFLAGS=$CFLAGS" -D_XOPEN_SOURCE=500 -D_DEFAULT_SOURCE"
 AC_MSG_CHECKING([if -D_OSF_SOURCE is needed for IPV6 support])
 AC_COMPILE_IFELSE([AC_LANG_PROGRAM([
 		#include <sys/types.h>
@@ -1217,7 +1217,7 @@ AC_ARG_WITH(thread-safe-resolver,
 		CFLAGS=$CFLAGS$efl
 		AC_MSG_CHECKING([if DNS resolver is re-entrant])
 		AC_COMPILE_IFELSE([AC_LANG_PROGRAM([
-				#define _BSD_SOURCE
+				#define _DEFAULT_SOURCE
 
 				#include <sys/types.h>
 				#include <netinet/in.h>
